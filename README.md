@@ -1,3 +1,11 @@
+---
+title: Clinic MCP
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
 # GenOffice
 
 An AI-native office suite for macOS and Windows: word processor, spreadsheet,
