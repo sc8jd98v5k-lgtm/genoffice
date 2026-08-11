@@ -16,4 +16,4 @@ jobs:
       - name: Push to Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: hf upload smnbrzq/clinic-mcp. --repo-type space --commit-message "Sync from genoffice"
+        run: hf upload smnbrzq/clinic-mcp . --repo-type space --commit-message "Sync from genoffice"
