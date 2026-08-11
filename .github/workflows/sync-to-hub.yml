@@ -19,5 +19,5 @@ jobs:
         run: |
           git config --global user.email "github@github.com"
           git config --global user.name "github"
-          git remote add hf https://smnbrzq:$HF_TOKEN@huggingface.co/spaces/smnbrzq/clinic-mcp || true
+          git remote add hf https://oauth:$HF_TOKEN@huggingface.co/spaces/smnbrzq/clinic-mcp || true
           git push hf main --force
