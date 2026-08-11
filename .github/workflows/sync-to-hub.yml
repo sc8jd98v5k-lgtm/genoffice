@@ -1,10 +1,8 @@
 name: Sync to Hugging Face Hub
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -13,11 +11,10 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to Hugging Face
+      - name: Install hf CLI
+        run: pip install -U huggingface_hub
+      - name: Push to Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git config --global user.email "github@github.com"
-          git config --global user.name "github"
-          git remote add hf https://oauth:$HF_TOKEN@huggingface.co/spaces/smnbrzq/clinic-mcp || true
-          git push hf main --force
+          hf upload smnbrzq/clinic-mcp. --repo-type space --commit-message "Sync from genoffice"
